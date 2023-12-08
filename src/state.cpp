@@ -1,8 +1,10 @@
 #include "../inc/state.h"
 
 AState::AState() {
-    this->setIsFinished(false);
-    this->setNextState(-1);     // -1: no stage selected
+    this->setIsStarted(false);
+    this->setIsRunning(false);
+    this->setIsFinished(false); // Check if the current state is still running
+    this->setNextState(-1);     // -1: no state selected
 }
 
 void AState::setIsFinished(bool b) {
@@ -17,6 +19,20 @@ void AState::setNextState(int stateID) {
 }
 int AState::getNextState() {
     return this->nextState;
+}
+
+void AState::setIsStarted(bool b){
+    this->isStarted = b;
+}
+bool AState::getIsStarted(){
+    return this->isStarted;
+}
+
+void AState::setIsRunning(bool b){
+    this->isRunning = b;
+}
+bool AState::getIsRunning(){
+    return this->isRunning;
 }
 
 void AState::renderLogo() {

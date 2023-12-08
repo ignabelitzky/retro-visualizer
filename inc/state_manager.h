@@ -4,11 +4,11 @@
 #include <iostream>
 #include <unistd.h> // For `usleep()`
 #include <stdlib.h> // For `system("clear")`
-
 using namespace std;
 
 #include "./menu.h"
 #include "./about.h"
+#include "sorting/sort_manager.h"
 
 class CStateManager {    // Class
     private:
@@ -17,6 +17,8 @@ class CStateManager {    // Class
 
         CMenu menu;
         CAbout about;
+
+        CSortManager sortManager;
 
     public:
         CStateManager();
