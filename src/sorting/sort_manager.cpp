@@ -74,7 +74,7 @@ void CSortManager::runSort(int i){
 
         switch(i){
             case 1:
-                cout <<"...Sort 1..."; return;
+                bubbleSort.runSort(array, numberOfElements);
             break;
         }
 

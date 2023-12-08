@@ -2,8 +2,13 @@
 #define SORT_MANAGER_H
 
 #include "../state.h"
+#include "bubble_sort.h"
 
-class CSortManager : public AState {
+class CSortManager: public AState,
+                    public CBubbleSort {
+    private:
+        CBubbleSort bubbleSort;
+
     public:
         CSortManager();
 
@@ -21,7 +26,7 @@ class CSortManager : public AState {
         }
 
         virtual void render() override {
-            //system("clear");
+            system("clear");
             cout << "*―――――――――――――――――――――――――――――――――――――――――――――――――――――――*\n";
             cout << "│                   SORTING VISUALIZER                  │\n";
             cout << "*―――――――――――――――――――――――――――――――――――――――――――――――――――――――*\n";

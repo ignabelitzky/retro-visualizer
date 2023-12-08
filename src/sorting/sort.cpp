@@ -26,46 +26,46 @@ void ASort::visualizeSort(int array[], int size) {
     for (int i = 0; i < size; i++){
         switch(array[i]){
             case 1:
-            visualization+="\t\t\t 1 ─\n";
+            visualization+="\t 1 ─\n";
             break;
             case 2:
-            visualization+="\t\t\t 2 ──\n";
+            visualization+="\t 2 ──\n";
             break;
             case 3:
-            visualization+="\t\t\t 3 ───\n";
+            visualization+="\t 3 ───\n";
             break;
             case 4:
-            visualization+="\t\t\t 4 ────\n";
+            visualization+="\t 4 ────\n";
             break;
             case 5:
-            visualization+="\t\t\t 5 ─────\n";
+            visualization+="\t 5 ─────\n";
             break;
             case 6:
-            visualization+="\t\t\t 6 ──────\n";
+            visualization+="\t 6 ──────\n";
             break;
             case 7:
-            visualization+="\t\t\t 7 ───────\n";
+            visualization+="\t 7 ───────\n";
             break;
             case 8:
-            visualization+="\t\t\t 8 ────────\n";
+            visualization+="\t 8 ────────\n";
             break;
             case 9:
-            visualization+="\t\t\t 9 ─────────\n";
+            visualization+="\t 9 ─────────\n";
             break;
             case 10:
-            visualization+="\t\t\t10 ──────────\n";
+            visualization+="\t10 ──────────\n";
             break;
             case 11:
-            visualization+="\t\t\t11 ───────────\n";
+            visualization+="\t11 ───────────\n";
             break;
             case 12:
-            visualization+="\t\t\t12 ────────────\n";
+            visualization+="\t12 ────────────\n";
             break;
             case 13:
-            visualization+="\t\t\t13 ─────────────\n";
+            visualization+="\t13 ─────────────\n";
             break;
             case 14:
-            visualization+="\t\t\t14 ──────────────\n";
+            visualization+="\t14 ──────────────\n";
             break;
         }
     }
@@ -83,7 +83,7 @@ int ASort::visualizeProcessingSort(string sortName, int array[],
                                     int originalArray[], int size, 
                                     int countStep){
     system("clear");
-    cout << "\n\n\t\t\t"<<sortName<<"\n\n";
+    cout << "\n\n\t"<<sortName<<"\n\n";
     cout << "Original\n";
     this->visualizeSort(originalArray, size);
     countStep++;
