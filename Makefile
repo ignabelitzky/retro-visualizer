@@ -1,4 +1,5 @@
-OBJS = main.o state_manager.o state.o menu.o about.o
+OBJS = 	main.o state_manager.o state.o menu.o about.o \
+		sort.o
 CC = g++
 
 #---------------Executable---------------#
@@ -21,6 +22,9 @@ menu.o:
 
 about.o:
 	$(CC) -c ./src/about.cpp	# -> about.o
+
+sort.o:
+	g++ -c ./src/sorting/sort.cpp
 
 #---------------Commands---------------#
 clean:	

@@ -51,6 +51,8 @@ void CStateManager::updateState() {
             about.setIsFinished(false);
         }
         break;
+    case 3: cout << "...WIP...";
+        break;
     case 0:
         this->exitState();
         break;
