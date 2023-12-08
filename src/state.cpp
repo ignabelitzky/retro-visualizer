@@ -36,6 +36,7 @@ bool AState::getIsRunning(){
 }
 
 void AState::renderLogo() {
+    system("clear");
     cout << "\n       _______  _______ _________ _______  _______\n";
     cout << "      (  ____ )(  ____ \\\\__   __/(  ____ )(  ___  )\n";
     cout << "      | (    )|| (    \\/   ) (   | (    )|| (   ) |\n";
