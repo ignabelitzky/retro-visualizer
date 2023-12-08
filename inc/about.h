@@ -1,10 +1,6 @@
 #ifndef ABOUT_H
 #define ABOUT_H
 
-#include <iostream>
-
-using namespace std;
-
 #include "./state.h"
 
 // Derived class from abstract `State`
@@ -24,11 +20,12 @@ class CAbout : public AState {
                 this->setNextState(menuOption);
                 this->setIsFinished(true);
             }
-            else 
+            else
                 cout << "Wrong input, try again !";
         }
 
         virtual void render() override {
+            AState::renderLogo();
             cout << "*―――――――――――――――――――――――――――――――――――――――――――――――――――――*\n";
             cout << "│                         ABOUT                       │\n";
             cout << "*―――――――――――――――――――――――――――――――――――――――――――――――――――――*\n";

@@ -2,8 +2,8 @@ OBJS = main.o state_manager.o state.o menu.o about.o
 CC = g++
 
 #---------------Executable---------------#
-FSM: $(OBJS)
-	g++ -o FSM $(OBJS)
+retro: $(OBJS)
+	g++ -o retro $(OBJS)
 	rm -f $(OBJS)	# Remove *.o files
 
 #---------------Object Files---------------#
@@ -24,10 +24,10 @@ about.o:
 
 #---------------Commands---------------#
 clean:	
-	rm -f core FSM $(OBJS)		# -> CLEANING
+	rm -f core retro $(OBJS)		# -> CLEANING
 
 run:
-	./FSM	# -> RUNNING
+	./retro	# -> RUNNING
 
 rebuild:
 	make clean; make	# -> REBUILDING

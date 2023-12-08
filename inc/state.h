@@ -1,8 +1,11 @@
 #ifndef STATE_H
 #define STATE_H
 
-// Abstract (a blueprint with some implementations, cannot be instantiated)  
-class AState {      
+#include <iostream>
+using namespace std;
+
+// Abstract (a blueprint with some implementations, cannot be instantiated)
+class AState {
     private:
         bool isFinished;
         int nextState;
@@ -16,8 +19,10 @@ class AState {
         void setNextState(int stateID);
         int getNextState();
 
-        virtual void update() = 0;  // pure virtual func (abstract method)
+        virtual void update() = 0; // pure virtual func (abstract method)
         virtual void render() = 0; // pure virtual func (abstract method)
+
+        void renderLogo();
 };  // * Don't forget `;`
 
 #endif  // STATE_H

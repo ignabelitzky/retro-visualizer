@@ -1,15 +1,12 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include <iostream>
-//#include <unistd.h> // For `usleep()`
-
-using namespace std;
+// #include <unistd.h> // For `usleep()`
 
 #include "./state.h"
 
 // Derived class from abstract `State`
-class CMenu : public AState { 
+class CMenu : public AState {
     public:
         CMenu();
 
@@ -21,7 +18,7 @@ class CMenu : public AState {
             cout << "\nWhich number do you choose? ";
             cin >> menuOption;
 
-            if (menuOption == 1 || menuOption == 2 || menuOption == 0) { 
+            if (menuOption == 1 || menuOption == 2 || menuOption == 0) {
                 this->setNextState(menuOption);
                 this->setIsFinished(true);
             }
@@ -30,8 +27,9 @@ class CMenu : public AState {
         }
 
         virtual void render() override {
+            AState::renderLogo();
             cout << "*―――――――――――――――――――――――――――――――――――――――――――――――――――――――*\n";
-            cout << "│                  Finite State Machine                 │\n";
+            cout << "│                       MAIN MENU                       │\n";
             cout << "*―――――――――――――――――――――――――――――――――――――――――――――――――――――――*\n";
             cout << "│                     1. Menu                           │\n";
             cout << "│                     2. About                          │\n";
