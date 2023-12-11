@@ -1,5 +1,5 @@
 OBJS = 	main.o state_manager.o state.o menu.o about.o \
-		sort.o sort_manager.o bubble_sort.o
+		sort.o sort_manager.o bubble_sort.o selection_sort.o
 CC = g++
 
 #---------------Executable---------------#
@@ -32,6 +32,9 @@ sort_manager.o:
 
 bubble_sort.o:
 	g++ -c ./src/sorting/bubble_sort.cpp
+
+selection_sort.o:
+	g++ -c ./src/sorting/selection_sort.cpp
 
 #---------------Commands---------------#
 clean:	

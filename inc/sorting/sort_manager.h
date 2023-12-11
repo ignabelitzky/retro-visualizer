@@ -3,11 +3,13 @@
 
 #include "../state.h"
 #include "bubble_sort.h"
+#include "selection_sort.h"
 
 class CSortManager: public AState,
-                    public CBubbleSort {
+                    public CBubbleSort, public CSelectionSort {
     private:
         CBubbleSort bubbleSort;
+        CSelectionSort selectionSort;
 
     public:
         CSortManager();
