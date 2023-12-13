@@ -9,6 +9,7 @@ using namespace std;
 #include "./menu.h"
 #include "./about.h"
 #include "sorting/sort_manager.h"
+#include "searching/search_manager.h"
 
 class CStateManager {    // Class
     private:
@@ -19,6 +20,7 @@ class CStateManager {    // Class
         CAbout about;
 
         CSortManager sortManager;
+        CSearchManager searchManager;
 
     public:
         CStateManager();

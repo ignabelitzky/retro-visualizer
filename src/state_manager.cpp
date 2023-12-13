@@ -53,7 +53,15 @@ void CStateManager::updateState() {
             }
         break;
         case 2: // SEARCHING VISUALIZER 
-            cout << "...Searching WIP..."; return;
+            if(!searchManager.getIsFinished()){      // state is running
+                searchManager.update();
+            }else{                                          // state finished
+                this->setState(searchManager.getNextState());
+                searchManager.setIsFinished(false);
+
+                searchManager.setIsStarted(false);    // Refresh attributes to default
+                searchManager.setIsRunning(false);
+            }
         break;
         case 3: // ABOUT
             if (!about.getIsFinished())

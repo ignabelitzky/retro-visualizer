@@ -1,4 +1,5 @@
 OBJS = 	main.o state_manager.o state.o menu.o about.o \
+		search.o search_manager.o \
 		sort.o sort_manager.o bubble_sort.o
 CC = g++
 
@@ -22,6 +23,13 @@ menu.o:
 
 about.o:
 	$(CC) -c ./src/about.cpp	# -> about.o
+
+#--------------Searching---------------#
+search.o:
+	g++ -c ./src/searching/search.cpp
+
+search_manager.o:
+	g++ -c ./src/searching/search_manager.cpp
 
 #--------------Sorting---------------#
 sort.o:
