@@ -39,9 +39,9 @@ void CSearchManager::replay(){
 
 void CSearchManager::chooseSearch(){
     int userInput;
-    cout << "\n\t\t1. Search";
+    cout << "\n\t\t1. Linear Search";
     cout << "\n\t\t0. Exit to main menu";
-    cout << "\n\n\t\tEnter number of your choice: ";
+    cout << "\n\nEnter number of your choice: ";
     cin >> userInput;
 
     if(userInput == 0){
@@ -62,7 +62,7 @@ void CSearchManager::chooseSearch(){
 void CSearchManager::runSearch(int i){
     int numbersOfElements, searchNode;
 
-    cout << "\n\t\tHow many elements in array to sort (2-13)? ";
+    cout << "\n\t\tHow many elements in array to sort (2-14)? ";
     cin >> numbersOfElements;
 
     int array[numbersOfElements];   // Create a random array
@@ -71,12 +71,12 @@ void CSearchManager::runSearch(int i){
 
     random_shuffle(array, array + numbersOfElements);     // Shuffle elements randomly
 
-    if(numbersOfElements>=2 && numbersOfElements<=13){
+    if(numbersOfElements>=2 && numbersOfElements<=14){
         cout<<"\n\t\t\t";
         for (int i=0; i < numbersOfElements;i++)          // to display random array
             cout<<array[i]<<" ";
 
-        cout << "\n\n\tWhich number are you looking for? ";
+        cout << "\n\n\t\tWhich number are you looking for? ";
         cin >> searchNode;
 
         int originalArray[numbersOfElements];                    // make a copy of original array
@@ -84,7 +84,7 @@ void CSearchManager::runSearch(int i){
 
         switch(i){
             case 1:
-                cout << "...Run Search...";
+                linearSearch.runSearch(array, numbersOfElements,searchNode);
             break;
         }
     }else{
