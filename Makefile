@@ -1,9 +1,11 @@
-OBJS = main.o state_manager.o state.o menu.o about.o
+OBJS = 	main.o state_manager.o state.o menu.o about.o \
+		search.o search_manager.o linear_search.o \
+		sort.o sort_manager.o bubble_sort.o
 CC = g++
 
 #---------------Executable---------------#
-FSM: $(OBJS)
-	g++ -o FSM $(OBJS)
+retro: $(OBJS)
+	g++ -o retro $(OBJS)
 	rm -f $(OBJS)	# Remove *.o files
 
 #---------------Object Files---------------#
@@ -22,12 +24,32 @@ menu.o:
 about.o:
 	$(CC) -c ./src/about.cpp	# -> about.o
 
+#--------------Searching---------------#
+search.o:
+	g++ -c ./src/searching/search.cpp
+
+search_manager.o:
+	g++ -c ./src/searching/search_manager.cpp
+
+linear_search.o:
+	g++ -c ./src/searching/linear_search.cpp
+
+#--------------Sorting---------------#
+sort.o:
+	g++ -c ./src/sorting/sort.cpp
+
+sort_manager.o:
+	g++ -c ./src/sorting/sort_manager.cpp
+
+bubble_sort.o:
+	g++ -c ./src/sorting/bubble_sort.cpp
+
 #---------------Commands---------------#
 clean:	
-	rm -f core FSM $(OBJS)		# -> CLEANING
+	rm -f core retro $(OBJS)		# -> CLEANING
 
 run:
-	./FSM	# -> RUNNING
+	./retro	# -> RUNNING
 
 rebuild:
 	make clean; make	# -> REBUILDING

@@ -2,7 +2,14 @@
 
 CStateManager::CStateManager() {
     this->setIsRunning(true);
-    this->setState(1);  // 1: Main menu; 2: About; 0: Exit
+    /*
+    1: Sorting Visualizer
+    2: Searching Visualizer
+    3: About
+    4: Main menu
+    0: Exit
+    */
+    this->setState(4);
 }
 
 void CStateManager::setIsRunning(bool b) {
@@ -19,7 +26,6 @@ int CStateManager::getState() {
     return this->state;
 }
 
-
 void CStateManager::runState() {
     cout << "...Running...";
 
@@ -35,24 +41,46 @@ void CStateManager::updateState() {
     cout << "...Updating...\n";
 
     switch (this->getState()) {
-    case 1:
-        if (!menu.getIsFinished())
-            menu.update();
-        else {
-            this->setState(menu.getNextState());
-            menu.setIsFinished(false);
-        }
+        case 1: // SORTING VISUALIZER 
+            if(!sortManager.getIsFinished()){       // State is running
+                sortManager.update();
+            }else{                                  // State finished
+                this->setState(sortManager.getNextState());
+                sortManager.setIsFinished(false);
+
+                sortManager.setIsStarted(false);    // Refresh attributes to default
+                sortManager.setIsRunning(false);
+            }
         break;
-    case 2:
-        if (!about.getIsFinished())
-            about.update();
-        else {
-            this->setState(about.getNextState());
-            about.setIsFinished(false);
-        }
+        case 2: // SEARCHING VISUALIZER 
+            if(!searchManager.getIsFinished()){      // state is running
+                searchManager.update();
+            }else{                                          // state finished
+                this->setState(searchManager.getNextState());
+                searchManager.setIsFinished(false);
+
+                searchManager.setIsStarted(false);    // Refresh attributes to default
+                searchManager.setIsRunning(false);
+            }
         break;
-    case 0:
-        this->exitState();
+        case 3: // ABOUT
+            if (!about.getIsFinished())
+                about.update();
+            else {
+                this->setState(about.getNextState());
+                about.setIsFinished(false);
+            }
+        break;
+        case 4: // MAIN MENU
+            if (!menu.getIsFinished())
+                menu.update();
+            else {
+                this->setState(menu.getNextState());
+                menu.setIsFinished(false);
+            }
+        break;
+        case 0: // EXIT
+            this->exitState();
         break;
     }
 }
