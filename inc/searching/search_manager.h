@@ -2,8 +2,13 @@
 #define SEARCH_MANAGER_H
 
 #include "../state.h"
+#include "linear_search.h"
 
-class CSearchManager : public AState {
+class CSearchManager : public AState,
+                        public CLinearSearch {
+    private:
+        CLinearSearch linearSearch;
+        
     public:
         CSearchManager();
 
