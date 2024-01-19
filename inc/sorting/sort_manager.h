@@ -4,12 +4,14 @@
 #include "../state.h"
 #include "bubble_sort.h"
 #include "selection_sort.h"
+#include "insertion_sort.h"
 
 class CSortManager: public AState,
                     public CBubbleSort, public CSelectionSort {
     private:
         CBubbleSort bubbleSort;
         CSelectionSort selectionSort;
+        CInsertionSort insertionSort;
 
     public:
         CSortManager();
