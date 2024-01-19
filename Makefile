@@ -1,6 +1,6 @@
 OBJS = 	main.o state_manager.o state.o menu.o about.o \
 		search.o search_manager.o linear_search.o \
-		sort.o sort_manager.o bubble_sort.o selection_sort.o
+		sort.o sort_manager.o bubble_sort.o selection_sort.o insertion_sort.o
 CC = g++
 
 #---------------Executable---------------#
@@ -46,6 +46,9 @@ bubble_sort.o:
 
 selection_sort.o:
 	g++ -c ./src/sorting/selection_sort.cpp
+
+insertion_sort.o:
+	g++ -c ./src/sorting/insertion_sort.cpp
 
 #---------------Commands---------------#
 clean:	
