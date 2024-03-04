@@ -40,6 +40,8 @@ void CSortManager::replay(){
 void CSortManager::chooseSort(){
     int userInput;
     cout << "\n\t\t1. Bubble Sort";
+    cout << "\n\t\t2. Selection Sort";
+    cout << "\n\t\t3. Insertion Sort";
     cout << "\n\t\t0. Exit to main menu";
     cout << "\n\n\t\tEnter number of your choice: ";
     cin >> userInput;
@@ -47,7 +49,7 @@ void CSortManager::chooseSort(){
     if(userInput == 0){
         this->setNextState(4);  // exit to Main Menu
         this->setIsFinished(true);
-    }else if( userInput == 1 ){
+    }else if( userInput == 1 || userInput == 2 || userInput == 3){
         this->runSort(userInput);
 
         //---------------GAME FINISHED
@@ -75,6 +77,12 @@ void CSortManager::runSort(int i){
         switch(i){
             case 1:
                 bubbleSort.runSort(array, arraySize);
+            break;
+            case 2:
+                selectionSort.runSort(array, arraySize);
+            break;
+            case 3:
+                insertionSort.runSort(array, arraySize);
             break;
         }
 
