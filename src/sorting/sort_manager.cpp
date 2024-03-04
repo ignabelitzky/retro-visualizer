@@ -59,22 +59,22 @@ void CSortManager::chooseSort(){
 }
 
 void CSortManager::runSort(int i){
-    int numberOfElements;
+    int arraySize;
     cout << "\nHow many elements in array to sort (2-14)? ";
-    cin >> numberOfElements;
-    if(numberOfElements>=2 && numberOfElements<=14){
-        int array[numberOfElements];
-        for (int i=0; i < numberOfElements;i++)
+    cin >> arraySize;
+    if(arraySize>=2 && arraySize<=14){
+        int array[arraySize];
+        for (int i=0; i < arraySize;i++)
             array[i] = i+1; // Array starts from 0, but can't display 0 in visualization so +1 for value
 
-        random_shuffle(array, array + numberOfElements);    // organize elements randomly
+        random_shuffle(array, array + arraySize);    // organize elements randomly
 
-        int originalArray[numberOfElements];                    // make a copy of original array
-        copy( array, array+numberOfElements, originalArray );   // to display in case 5 (quick sort)
+        int originalArray[arraySize];                    // make a copy of original array
+        copy( array, array+arraySize, originalArray );   // to display in case 5 (quick sort)
 
         switch(i){
             case 1:
-                bubbleSort.runSort(array, numberOfElements);
+                bubbleSort.runSort(array, arraySize);
             break;
         }
 
