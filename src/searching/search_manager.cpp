@@ -40,6 +40,7 @@ void CSearchManager::replay(){
 void CSearchManager::chooseSearch(){
     int userInput;
     cout << "\n\t\t1. Linear Search";
+    cout << "\n\t\t2. Binary Search";
     cout << "\n\t\t0. Exit to main menu";
     cout << "\n\nEnter number of your choice: ";
     cin >> userInput;
@@ -47,7 +48,7 @@ void CSearchManager::chooseSearch(){
     if(userInput == 0){
         this->setNextState(4);        // exit to Main Menu
         this->setIsFinished(true);
-    }else if(userInput == 1){
+    }else if(userInput == 1 || userInput == 2){
         this->runSearch(userInput);
 
         //--------------GAME FINISHED
@@ -60,32 +61,37 @@ void CSearchManager::chooseSearch(){
 }
 
 void CSearchManager::runSearch(int i){
-    int numbersOfElements, searchNode;
+    int arraySize, searchNode;
 
     cout << "\n\t\tHow many elements in array to sort (2-14)? ";
-    cin >> numbersOfElements;
+    cin >> arraySize;
 
-    int array[numbersOfElements];   // Create a random array
-    for (int i=0; i < numbersOfElements;i++)
+    int array[arraySize];   // Create a random array
+    for (int i=0; i < arraySize;i++)
         array[i] = i+1; // Array starts from 0, but can't display 0 in visualization so +1 for value
 
-    random_shuffle(array, array + numbersOfElements);     // Shuffle elements randomly
+    random_shuffle(array, array + arraySize);     // Shuffle elements randomly
 
-    if(numbersOfElements>=2 && numbersOfElements<=14){
+    if(arraySize>=2 && arraySize<=14){
         cout<<"\n\t\t\t";
-        for (int i=0; i < numbersOfElements;i++)          // to display random array
+        for (int i=0; i < arraySize;i++)          // to display random array
             cout<<array[i]<<" ";
 
         cout << "\n\n\t\tWhich number are you looking for? ";
         cin >> searchNode;
 
-        int originalArray[numbersOfElements];                    // make a copy of original array
-        copy( array, array+numbersOfElements, originalArray );   // to display in case 5 (quick sort)
+        int originalArray[arraySize];                    // make a copy of original array
+        copy( array, array+arraySize, originalArray );   // to display in case 5 (quick sort)
 
         switch(i){
             case 1:
-                linearSearch.runSearch(array, numbersOfElements,searchNode);
-            break;
+                linearSearch.runSearch(array, arraySize, searchNode);
+                break;
+            case 2:
+                bubbleSort.runSort(array, arraySize);    //! Replace this with Binary Insertion Sort
+                binarySearch.runSearch(array, originalArray, arraySize, 
+                                        searchNode, 0 , arraySize - 1);
+                break;
         }
     }else{
         cout << "\n☠ Wrong input, please try again ☠\n\n";
