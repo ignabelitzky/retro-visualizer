@@ -1,11 +1,11 @@
 OBJS = 	main.o state_manager.o state.o menu.o about.o \
-		search.o search_manager.o linear_search.o \
+		search.o search_manager.o linear_search.o binary_search.o \
 		sort.o sort_manager.o bubble_sort.o
 CC = g++
 
 #---------------Executable---------------#
 retro: $(OBJS)
-	g++ -o retro $(OBJS)
+	$(CC) -o retro $(OBJS)
 	rm -f $(OBJS)	# Remove *.o files
 
 #---------------Object Files---------------#
@@ -26,23 +26,26 @@ about.o:
 
 #--------------Searching---------------#
 search.o:
-	g++ -c ./src/searching/search.cpp
+	$(CC) -c ./src/searching/search.cpp
 
 search_manager.o:
-	g++ -c ./src/searching/search_manager.cpp
+	$(CC) -c ./src/searching/search_manager.cpp
 
 linear_search.o:
-	g++ -c ./src/searching/linear_search.cpp
+	$(CC) -c ./src/searching/linear_search.cpp
+
+binary_search.o:
+	$(CC) -c ./src/searching/binary_search.cpp
 
 #--------------Sorting---------------#
 sort.o:
-	g++ -c ./src/sorting/sort.cpp
+	$(CC) -c ./src/sorting/sort.cpp
 
 sort_manager.o:
-	g++ -c ./src/sorting/sort_manager.cpp
+	$(CC) -c ./src/sorting/sort_manager.cpp
 
 bubble_sort.o:
-	g++ -c ./src/sorting/bubble_sort.cpp
+	$(CC) -c ./src/sorting/bubble_sort.cpp
 
 #---------------Commands---------------#
 clean:	
