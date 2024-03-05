@@ -8,9 +8,7 @@
 // Sort out array before implementing binary search (can use any sorting algorithms)
 #include "../sorting/bubble_sort.h" //! Replace this with Binary Insertion Sort
 
-class CSearchManager : public AState,
-                        public CBubbleSort, 
-                        public CLinearSearch, public CBinarySearch {
+class CSearchManager : public AState {
     private:
         CLinearSearch linearSearch;
         CBinarySearch binarySearch;
