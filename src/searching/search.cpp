@@ -110,10 +110,10 @@ void ASearch::visualizeSearch(int array[], int size, int searchNode, int checkNo
                     visualization+="\t 4 ────\n";
             break;
             case 5:
-               if(checkNode == array[i]){
-                   if(searchNode == checkNode)
-                       visualization+=">>>  5 ─────\n";
-                   else
+                if(checkNode == array[i]){
+                    if(searchNode == checkNode)
+                        visualization+=">>>  5 ─────\n";
+                    else
                         visualization+=" 5 ─────\n";
                 }else
                     visualization+="\t 5 ─────\n";
@@ -165,9 +165,9 @@ void ASearch::visualizeSearch(int array[], int size, int searchNode, int checkNo
             break;
             case 11:
                 if(checkNode == array[i]){
-                   if(searchNode==checkNode )
-                       visualization+=">>> 11 ───────────\n";
-                   else
+                    if(searchNode==checkNode )
+                        visualization+=">>> 11 ───────────\n";
+                    else
                     visualization+="11 ───────────\n";
                 }else
                     visualization+="\t11 ───────────\n";
@@ -183,9 +183,9 @@ void ASearch::visualizeSearch(int array[], int size, int searchNode, int checkNo
             break;
             case 13:
                 if(checkNode == array[i]){
-                   if(searchNode==checkNode)
-                       visualization+=">>> 13 ─────────────\n";
-                   else
+                    if(searchNode==checkNode)
+                        visualization+=">>> 13 ─────────────\n";
+                    else
                     visualization+="13 ─────────────\n";
                 }else
                     visualization+="\t13 ─────────────\n";

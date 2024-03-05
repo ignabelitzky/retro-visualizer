@@ -63,7 +63,7 @@ void CSearchManager::chooseSearch(){
 void CSearchManager::runSearch(int i){
     int arraySize, searchNode;
 
-    cout << "\n\t\tHow many elements in array to sort (2-14)? ";
+    cout << "\nHow many elements in array to sort (2-14)? ";
     cin >> arraySize;
 
     int array[arraySize];   // Create a random array
@@ -73,11 +73,11 @@ void CSearchManager::runSearch(int i){
     random_shuffle(array, array + arraySize);     // Shuffle elements randomly
 
     if(arraySize>=2 && arraySize<=14){
-        cout<<"\n\t\t\t";
+        cout<<"\n\t";
         for (int i=0; i < arraySize;i++)          // to display random array
             cout<<array[i]<<" ";
 
-        cout << "\n\n\t\tWhich number are you looking for? ";
+        cout << "\n\nWhich number are you looking for? ";
         cin >> searchNode;
 
         int originalArray[arraySize];                    // make a copy of original array
