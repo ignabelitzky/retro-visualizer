@@ -43,6 +43,7 @@ void CSortManager::chooseSort(){
     cout << "\n\t\t2. Selection Sort";
     cout << "\n\t\t3. Insertion Sort";
     cout << "\n\t\t4. Binary Insertion Sort";
+    cout << "\n\t\t5. Quick Sort";
     cout << "\n\t\t0. Exit to main menu";
     cout << "\n\nEnter number of your choice: ";
     cin >> userInput;
@@ -51,7 +52,7 @@ void CSortManager::chooseSort(){
         this->setNextState(4);  // exit to Main Menu
         this->setIsFinished(true);
     }else if(userInput == 1 || userInput == 2 || 
-            userInput == 3 || userInput == 4){
+            userInput == 3 || userInput == 4 || userInput == 5){
         this->runSort(userInput);
 
         //---------------GAME FINISHED
@@ -88,6 +89,9 @@ void CSortManager::runSort(int i){
             break;
             case 4:
                 binaryInsertionSort.runSort(array, arraySize);
+            break;
+            case 5:
+                quickSort.runSort(array, originalArray, arraySize, 0, arraySize - 1);
             break;
         }
 
