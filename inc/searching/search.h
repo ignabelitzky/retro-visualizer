@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <unistd.h>         // Used for usleep()
+#include <math.h>           // sqrt() in Jump Search
 
 using namespace std;
 

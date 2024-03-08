@@ -41,6 +41,7 @@ void CSearchManager::chooseSearch(){
     int userInput;
     cout << "\n\t\t1. Linear Search";
     cout << "\n\t\t2. Binary Search";
+    cout << "\n\t\t3. Jump Search";
     cout << "\n\t\t0. Exit to main menu";
     cout << "\n\nEnter number of your choice: ";
     cin >> userInput;
@@ -48,7 +49,7 @@ void CSearchManager::chooseSearch(){
     if(userInput == 0){
         this->setNextState(4);        // exit to Main Menu
         this->setIsFinished(true);
-    }else if(userInput == 1 || userInput == 2){
+    }else if(userInput == 1 || userInput == 2 || userInput == 3){
         this->runSearch(userInput);
 
         //--------------GAME FINISHED
@@ -91,6 +92,10 @@ void CSearchManager::runSearch(int i){
                 bubbleSort.runSort(array, arraySize);    //! Replace this with Binary Insertion Sort
                 binarySearch.runSearch(array, originalArray, arraySize, 
                                         searchNode, 0 , arraySize - 1);
+                break;
+            case 3:
+                bubbleSort.runSort(array, arraySize);    //! Replace this with Binary Insertion Sort
+                jumpSearch.runSearch(array, originalArray, arraySize, searchNode);
                 break;
         }
     }else{
