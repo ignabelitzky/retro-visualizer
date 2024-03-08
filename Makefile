@@ -1,5 +1,5 @@
 OBJS = 	main.o state_manager.o state.o menu.o about.o \
-		search.o search_manager.o linear_search.o binary_search.o \
+		search.o search_manager.o linear_search.o binary_search.o jump_search.o \
 		sort.o sort_manager.o bubble_sort.o selection_sort.o insertion_sort.o binary_insertion_sort.o quick_sort.o
 CC = g++
 
@@ -36,6 +36,9 @@ linear_search.o:
 
 binary_search.o:
 	$(CC) -c ./src/searching/binary_search.cpp
+
+jump_search.o:
+	$(CC) -c ./src/searching/jump_search.cpp
 
 #--------------Sorting---------------#
 sort.o:
