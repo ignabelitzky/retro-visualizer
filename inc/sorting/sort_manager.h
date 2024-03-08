@@ -3,11 +3,18 @@
 
 #include "../state.h"
 #include "bubble_sort.h"
+#include "selection_sort.h"
+#include "insertion_sort.h"
+#include "binary_insertion_sort.h"
+#include "quick_sort.h"
 
-class CSortManager: public AState,
-                    public CBubbleSort {
+class CSortManager: public AState {
     private:
         CBubbleSort bubbleSort;
+        CSelectionSort selectionSort;
+        CInsertionSort insertionSort;
+        CBinaryInsertionSort binaryInsertionSort;
+        CQuickSort quickSort;
 
     public:
         CSortManager();

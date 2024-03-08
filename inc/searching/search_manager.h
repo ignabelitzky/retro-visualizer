@@ -3,11 +3,19 @@
 
 #include "../state.h"
 #include "linear_search.h"
+#include "binary_search.h"
+#include "jump_search.h"
 
-class CSearchManager : public AState,
-                        public CLinearSearch {
+// Sort out array before implementing binary search (can use any sorting algorithms)
+#include "../sorting/bubble_sort.h" //! Replace this with Binary Insertion Sort
+
+class CSearchManager : public AState {
     private:
         CLinearSearch linearSearch;
+        CBinarySearch binarySearch;
+        CJumpSearch jumpSearch;
+
+        CBubbleSort bubbleSort;
         
     public:
         CSearchManager();
